@@ -1,0 +1,30 @@
+### Testing with out-of-range depth: Greater than 10 (15) ###
+invalid depthDepth out of range: Greater than 10
+
+### Testing with out-of-range depth: Less than 0 (-10) ###
+invalid depthDepth out of range: Less than 0
+
+### Testing with unavailable directory ###
+Failed to create .crawler file in directory: ../data/nonexistent_directory
+Invalid pageDirectory: ../data/nonexistent_directory
+The directory not found
+
+### Testing with invalid link ###
+Invalid seedURL: http:/google.com.html
+We can't crawl the website due to an invalid link
+
+### Testing with too many arguments ###
+invalid numnber of inputs
+Too many arguments were provided
+
+### Crawling the letters website at depth 3 ###
+Total number of files found in ../data/letters after crawling at depth 3: 36
+
+### Crawling the wikipedia Linked_list page at depth 1 ###
+The wikipedia contains more urls for convinience we crawl only till depth 1
+
+Total number of files found in ../data/wikipedia after crawling at depth 1: 178
+
+### Final summary ###
+Total number of files in ../data/letters: 36
+Total number of files in ../data/wikipedia: 178

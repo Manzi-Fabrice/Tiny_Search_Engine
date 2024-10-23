@@ -1,0 +1,11 @@
+# Ignore all object files
+*.o
+
+# Ignore all files that start with 'crawler'
+crawler*
+
+# Ignore system files
+.DS_Store
+
+# Ignore compiled  binary files
+*.exe

@@ -143,5 +143,3 @@ static void pageScan(webpage_t *page, bag_t *pagesToCrawl, hashtable_t *pagesSee
         }
     }
 }
-
-

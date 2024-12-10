@@ -1,0 +1,35 @@
+### Test 1: No arguments ###
+Invalid number of inputs
+Usage: ./indexer pageDirectory indexFilename
+Indexer correctly handled no arguments
+
+### Test 2: One argument ###
+Invalid number of inputs
+Usage: ./indexer pageDirectory indexFilename
+Indexer correctly handled one argument
+
+### Test 3: Three or more arguments ###
+Invalid number of inputs
+Usage: ./indexer pageDirectory indexFilename
+Indexer correctly handled too many arguments
+
+### Test 4: Invalid pageDirectory (non-existent path) ###
+Failed to validate provided directory '../data/nonexistent_directory'
+Indexer correctly handled non-existent pageDirectory
+
+### Test 5: Invalid pageDirectory (not a crawler directory) ###
+Failed to validate provided directory '../data/emptydir'
+Indexer correctly handled invalid pageDirectory (not a crawler directory)
+
+### Test 6: Invalid indexFilename (non-existent path) ###
+Failed to open the file '/nonexistent_path/index.index' for writing
+Indexer failed to handle invalid indexFilename (non-existent path)
+
+### Test 7: Invalid indexFilename (read-only directory) ###
+Failed to open the file '../data/readonlydir/index.index' for writing
+Indexer failed to handle indexFilename in read-only directory
+
+### Test 8: Invalid indexFilename (existing, read-only file) ###
+Failed to open the file '../data/readonly.index' for writing
+Indexer failed to handle existing, read-only index file
+

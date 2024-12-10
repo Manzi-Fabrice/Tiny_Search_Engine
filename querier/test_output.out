@@ -1,0 +1,21 @@
+==========================================================
+Testing querier parameter validation
+Test 1: Running querier with too few arguments
+invalid number of inputs : Test 1 Passed
+Test 2: Running querier with too many arguments
+invalid number of inputs : Test 2 Passed
+==========================================================
+Testing querier basic functionality
+Test 3: Single-word query 'home'
+Invalid directory provided
+Test 3 Failed: Query 'home' encountered an error
+Test 4: Query 'home AND back'
+Invalid directory provided
+Test 4 Failed: Query 'home AND back' encountered an error
+==========================================================
+Basic Fuzz Testing with fuzzquery
+Running fuzz tests with 5 random queries...
+Invalid directory provided
+Fuzz Test Failed: Querier encountered errors during fuzz testing
+==========================================================
+Testing complete. Review results in test_output.out.

@@ -1,25 +1,28 @@
-# Makefile for building the CS50 pagedir module
-# Manzi Fabrice Niyigaba, October 2024
-# This Makefile compiles the pagedir module and creates a static library `common.a`.
+# Manzi Fabrice Niyigaba
+# COSC 50 Fall 2024, TSE Common Directory Makefile
 
-# Variables
+# Compiler and flags
 CC = gcc
-CFLAGS = -Wall -pedantic -std=c11 -ggdb -I ../libcs50 
-LIBS = ../libcs50/libcs50.a  
-LIB = common.a  
-OBJS = pagedir.o  
+CFLAGS = -Wall -pedantic -std=c11 -ggdb $(TESTING) -I../lib -I../set
 
+# Memory-leak testing
+VALGRIND = valgrind --leak-check=full --show-leak-kinds=all
 
+# Libraries and objects
+LIBS = ../libcs50/libcs50-given.a
+LIB = commonlib.a
+OBJS = pagedir.o word.o index.o
+
+# Rule to create the common library
 $(LIB): $(OBJS)
-	ar cr $(LIB) $(OBJS)  # Create static library from object files
+	@ar cr $(LIB) $(OBJS)
 
+# Object dependencies on headers
+pagedir.o: pagedir.h
+index.o: index.h
+word.o: word.h
 
-pagedir.o: pagedir.c pagedir.h
-	$(CC) $(CFLAGS) -c pagedir.c  
-
-
-.PHONY: clean
+# Clean rule to remove generated files
 clean:
-	rm -rf *.dSYM 
-	rm -f *~ *.o  
-	rm -f $(LIB)  
+	rm -f *~ *.o
+	rm -f $(EXEC)

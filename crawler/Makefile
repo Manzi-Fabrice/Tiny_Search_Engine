@@ -24,7 +24,7 @@ test:
 	./testing.sh &> testing.out  
 
 valgrind: crawler
-	valgrind --leak-check=full --show-leak-kinds=all ./crawler  # Run memory leak check
+	valgrind --leak-check=full --show-leak-kinds=all ./crawler http://cs50tse.cs.dartmouth.edu/tse/letters/index.html ../data/letters 2
 
 
 clean:
